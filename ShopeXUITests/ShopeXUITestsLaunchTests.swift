@@ -9,6 +9,10 @@ import XCTest
 
 final class ShopeXUITestsLaunchTests: XCTestCase {
 
+    // Note: Setting this to 'true' causes the test to run for each UI configuration
+    // (e.g., light/dark mode, different text sizes). This is useful for screenshot
+    // testing but increases test execution time. Consider setting to 'false' if
+    // configuration-specific testing is not required.
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }
@@ -22,12 +26,12 @@ final class ShopeXUITestsLaunchTests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
-        // Insert steps here to perform after app launch but before taking a screenshot,
-        // such as logging into a test account or navigating somewhere in the app
-
+        // Take screenshot for verification
+        // Using .deleteOnSuccess to save storage and improve performance
+        // Change to .keepAlways if you need to preserve all screenshots
         let attachment = XCTAttachment(screenshot: app.screenshot())
         attachment.name = "Launch Screen"
-        attachment.lifetime = .keepAlways
+        attachment.lifetime = .deleteOnSuccess
         add(attachment)
     }
 }

@@ -78,6 +78,37 @@ Text("Hello, world!")
 - More reliable test execution
 - Better accessibility support for users with disabilities
 
+### 3. Launch Test Optimization (`ShopeXUITestsLaunchTests.swift`)
+
+#### Issue: Inefficient Screenshot Storage
+**Problem:** Screenshots were set to `.keepAlways`, meaning all screenshots are retained even when tests pass. This consumes unnecessary storage and can slow down test runs, especially in CI/CD environments.
+
+**Solution:** Changed screenshot lifetime to `.deleteOnSuccess` to automatically clean up screenshots when tests pass.
+
+```swift
+// Before: Always keep screenshots
+let attachment = XCTAttachment(screenshot: app.screenshot())
+attachment.lifetime = .keepAlways
+
+// After: Delete on success
+let attachment = XCTAttachment(screenshot: app.screenshot())
+attachment.lifetime = .deleteOnSuccess  // Only keep on failure
+```
+
+**Performance Impact:**
+- Reduced storage consumption in CI/CD systems
+- Faster test cleanup
+- Easier to identify failing tests (only failures have screenshots)
+
+#### Issue: Unclear Performance Trade-off
+**Problem:** The `runsForEachTargetApplicationUIConfiguration` property was set to `true` without documentation about its performance impact.
+
+**Solution:** Added clear documentation explaining that this setting causes tests to run multiple times for different UI configurations, which increases test execution time.
+
+**Performance Impact:**
+- Developers can now make informed decisions about whether they need multi-configuration testing
+- Clear understanding of test execution time implications
+
 ## Best Practices for Future Development
 
 ### SwiftUI Performance Tips
@@ -102,11 +133,15 @@ Text("Hello, world!")
 - Empty test methods: 1
 - Missing accessibility identifiers: 2
 - Inefficient object creation in performance tests: 1
+- Inefficient screenshot retention: 1
+- Undocumented performance trade-offs: 1
 
 ### After Optimizations
 - Empty test methods: 0 ✓
 - Missing accessibility identifiers: 0 ✓
 - Inefficient object creation in performance tests: 0 ✓
+- Inefficient screenshot retention: 0 ✓
+- Undocumented performance trade-offs: 0 ✓
 
 ## Future Recommendations
 
