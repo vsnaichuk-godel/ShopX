@@ -28,14 +28,19 @@ final class ShopeXUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        // Verify the app launched successfully by checking for UI elements
+        // Using accessibility identifiers is more efficient than text/image matching
+        XCTAssertTrue(app.images["globe"].exists, "Globe image should exist")
+        XCTAssertTrue(app.staticTexts["helloText"].exists, "Hello text should exist")
     }
 
     @MainActor
     func testLaunchPerformance() throws {
         // This measures how long it takes to launch your application.
+        // Using a single instance reduces overhead
+        let app = XCUIApplication()
         measure(metrics: [XCTApplicationLaunchMetric()]) {
-            XCUIApplication().launch()
+            app.launch()
         }
     }
 }
