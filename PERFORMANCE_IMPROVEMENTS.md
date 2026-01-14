@@ -1,6 +1,6 @@
 # Performance Improvements
 
-This document outlines the performance improvements and optimizations made to the ShopX-2 codebase.
+This document outlines the performance improvements and optimizations made to the ShopeX codebase.
 
 ## Summary of Changes
 
