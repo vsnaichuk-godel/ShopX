@@ -10,8 +10,14 @@ import Testing
 
 struct ShopeXTests {
 
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+    @Test func exampleContentViewCreation() async throws {
+        // Test that ContentView can be instantiated
+        // This ensures the view's initialization doesn't have runtime issues
+        let contentView = ContentView()
+        
+        // Verify the view exists (basic smoke test)
+        // In a real app, you would test computed properties, view models, etc.
+        #expect(contentView.body != nil)
     }
 
 }
