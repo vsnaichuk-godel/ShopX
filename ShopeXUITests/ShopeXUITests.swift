@@ -37,10 +37,8 @@ final class ShopeXUITests: XCTestCase {
     @MainActor
     func testLaunchPerformance() throws {
         // This measures how long it takes to launch your application.
-        // Using a single instance reduces overhead
-        let app = XCUIApplication()
         measure(metrics: [XCTApplicationLaunchMetric()]) {
-            app.launch()
+            XCUIApplication().launch()
         }
     }
 }

@@ -30,26 +30,6 @@ func testExample() throws {
 
 **Performance Impact:** Prevents unnecessary app launches in CI/CD pipelines when tests fail early.
 
-#### Issue: Inefficient App Instance Creation
-**Problem:** The `testLaunchPerformance()` method was creating a new `XCUIApplication()` instance inside the measure block on each iteration.
-
-**Solution:** Create the app instance once outside the measure block to reduce overhead.
-
-```swift
-// Before: Creates new instance each iteration
-measure(metrics: [XCTApplicationLaunchMetric()]) {
-    XCUIApplication().launch()  // New instance each time
-}
-
-// After: Reuses single instance
-let app = XCUIApplication()
-measure(metrics: [XCTApplicationLaunchMetric()]) {
-    app.launch()  // Reuses instance
-}
-```
-
-**Performance Impact:** Reduces object allocation overhead during performance testing, providing more accurate launch time measurements.
-
 ### 2. ContentView Optimization (`ContentView.swift`)
 
 #### Issue: Missing Accessibility Identifiers
@@ -157,14 +137,12 @@ attachment.lifetime = .deleteOnSuccess  // Only keep on failure
 ### Before Optimizations
 - Empty test methods: 2
 - Missing accessibility identifiers: 2
-- Inefficient object creation in performance tests: 1
 - Inefficient screenshot retention: 1
 - Undocumented performance trade-offs: 1
 
 ### After Optimizations
 - Empty test methods: 0 ✓
 - Missing accessibility identifiers: 0 ✓
-- Inefficient object creation in performance tests: 0 ✓
 - Inefficient screenshot retention: 0 ✓
 - Undocumented performance trade-offs: 0 ✓
 
