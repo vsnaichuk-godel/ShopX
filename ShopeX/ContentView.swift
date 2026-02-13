@@ -33,7 +33,7 @@ struct ContentView: View {
                                 .fontWeight(.bold)
                                 .foregroundColor(Color("TextPrimary"))
                             
-                            Text("Dark Mode Enabled")
+                            Text(colorScheme == .dark ? "Dark Mode" : "Light Mode")
                                 .font(.subheadline)
                                 .foregroundColor(Color("TextSecondary"))
                         }
