@@ -1,6 +1,6 @@
 # Dark Mode Implementation Summary
 
-This document provides a comprehensive overview of the Dark Mode implementation in ShopX.
+This document provides a comprehensive overview of the Dark Mode implementation in ShopeX.
 
 ## Overview
 

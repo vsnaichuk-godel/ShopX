@@ -1,6 +1,6 @@
 # Dark Mode Color Contrast Analysis
 
-This document provides a detailed analysis of color contrast ratios for the ShopX app to ensure WCAG AA compliance.
+This document provides a detailed analysis of color contrast ratios for the ShopeX app to ensure WCAG AA compliance.
 
 ## WCAG AA Standards
 - **Normal text**: Minimum contrast ratio of 4.5:1

@@ -18,7 +18,7 @@ struct ContentView: View {
                     .font(.system(size: 60))
                     .foregroundColor(Color("TextPrimary"))
                 
-                Text("ShopX")
+                Text("ShopeX")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(Color("TextPrimary"))

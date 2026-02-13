@@ -1,6 +1,6 @@
 # Dark Mode Manual Verification Guide
 
-This document describes the manual verification steps to ensure Dark Mode is working correctly in the ShopX app.
+This document describes the manual verification steps to ensure Dark Mode is working correctly in the ShopeX app.
 
 ## Prerequisites
 - Xcode 15.0 or later
@@ -14,13 +14,13 @@ Test that the app automatically adapts to the system appearance:
 1. Open the app on your iOS device or simulator
 2. Go to Settings > Display & Brightness
 3. Toggle between Light and Dark appearance
-4. Return to the ShopX app
+4. Return to the ShopeX app
 5. **Expected Result**: The app should automatically update to match the system appearance without restarting
 
 ### 2. Theme Picker Functionality
 Test the in-app theme picker:
 
-1. Open the ShopX app
+1. Open the ShopeX app
 2. In the Home screen, you should see three theme options: Light, Dark, and System
 3. Tap on "Light"
    - **Expected Result**: App switches to light mode immediately
@@ -32,7 +32,7 @@ Test the in-app theme picker:
 ### 3. Theme Persistence
 Test that theme preference is remembered across app launches:
 
-1. Open the ShopX app
+1. Open the ShopeX app
 2. Select "Dark" theme
 3. Force quit the app (swipe up from app switcher)
 4. Relaunch the app
@@ -44,7 +44,7 @@ Verify all UI elements are visible and properly styled in Light mode:
 1. Set theme to "Light"
 2. Check the following elements:
    - Icon (moon.stars.fill) - should be black (#000000)
-   - "ShopX" title - should be black (#000000)
+   - "ShopeX" title - should be black (#000000)
    - "Dark Mode Enabled" subtitle - should be gray (#666666)
    - Theme buttons background - should be white (#FFFFFF)
    - Theme button text - should be black (#000000)
@@ -58,7 +58,7 @@ Verify all UI elements are visible and properly styled in Dark mode:
 1. Set theme to "Dark"
 2. Check the following elements:
    - Icon (moon.stars.fill) - should be white (#FFFFFF)
-   - "ShopX" title - should be white (#FFFFFF)
+   - "ShopeX" title - should be white (#FFFFFF)
    - "Dark Mode Enabled" subtitle - should be light gray (#B3B3B3)
    - Theme buttons background - should be dark gray (#383838)
    - Theme button text - should be white (#FFFFFF)
@@ -71,7 +71,7 @@ Verify that all color combinations meet WCAG AA standards:
 
 #### Light Mode Contrast Ratios:
 - Primary text (#000000) on white background (#FFFFFF): **21:1** ✅ (Exceeds 7:1)
-- Secondary text (#666666) on white background (#FFFFFF): **5.7:1** ⚠️ (Meets 4.5:1 for normal text, but below 7:1)
+- Secondary text (#666666) on white background (#FFFFFF): **5.74:1** ⚠️ (Meets 4.5:1 for normal text, but below 7:1)
 
 #### Dark Mode Contrast Ratios:
 - Primary text (#FFFFFF) on dark background (#1C1C1C): **17.4:1** ✅ (Exceeds 7:1)
@@ -90,7 +90,7 @@ Test Dark Mode behavior with multitasking:
 
 1. Open the app in Dark mode
 2. Switch to another app
-3. Return to ShopX app
+3. Return to ShopeX app
 4. **Expected Result**: App should maintain the selected theme
 
 ## Adaptive Color Assets
