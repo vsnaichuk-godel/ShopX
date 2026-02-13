@@ -1,7 +1,7 @@
 # Dark Mode Implementation Guide
 
 ## Overview
-This document describes the comprehensive Dark Mode implementation for the ShopX application.
+This document describes the comprehensive Dark Mode implementation for the ShopeX application.
 
 ## Architecture
 

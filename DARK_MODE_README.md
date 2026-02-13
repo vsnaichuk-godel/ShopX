@@ -1,8 +1,8 @@
-# ShopX - Dark Mode Feature
+# ShopeX - Dark Mode Feature
 
 ## Quick Start
 
-This implementation adds comprehensive Dark Mode support to ShopX with:
+This implementation adds comprehensive Dark Mode support to ShopeX with:
 - ✅ System, Light, and Dark theme options
 - ✅ Persistent user preferences
 - ✅ WCAG AA accessibility compliance

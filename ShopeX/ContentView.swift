@@ -28,7 +28,7 @@ struct ContentView: View {
                                 .foregroundColor(.accentColor)
                                 .padding(.top, 20)
                             
-                            Text("ShopX")
+                            Text("ShopeX")
                                 .font(.largeTitle)
                                 .fontWeight(.bold)
                                 .foregroundColor(Color("TextPrimary"))
