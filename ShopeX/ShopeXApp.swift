@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct ShopeXApp: App {
+    @StateObject private var themeManager = ThemeManager()
+    @Environment(\.colorScheme) var systemColorScheme
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(themeManager)
+                .preferredColorScheme(themeManager.colorScheme(for: systemColorScheme))
         }
     }
 }
